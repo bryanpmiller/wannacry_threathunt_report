@@ -1,0 +1,9 @@
+// 09_process_tree_helpers.kql
+// Goal: Identify parent/child relationships around a suspected process
+// Usage: filter ProcessCommandLine for a known token (e.g., "want_to_cry" or a script name)
+
+DeviceProcessEvents
+| where DeviceName == "vm-final-lab-wo"
+| where ProcessCommandLine has "want_to_cry" or InitiatingProcessCommandLine has "want_to_cry"
+| project TimeGenerated, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine, AccountName
+| sort by TimeGenerated asc

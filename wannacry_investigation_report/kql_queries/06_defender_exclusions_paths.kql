@@ -1,0 +1,9 @@
+// 06_defender_exclusions_paths.kql
+// Goal: Identify Windows Defender path exclusion modifications (common defense evasion)
+// Note: Key patterns vary; this query uses typical Defender exclusion path keys.
+
+DeviceRegistryEvents
+| where DeviceName == "vm-final-lab-wo"
+| where RegistryKey has "Microsoft\Windows Defender" and RegistryKey has "Exclusions\Paths"
+| project TimeGenerated, ActionType, RegistryKey, RegistryValueName, RegistryValueData, InitiatingProcessFileName, InitiatingProcessCommandLine, InitiatingProcessAccountName
+| sort by TimeGenerated asc

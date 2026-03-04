@@ -1,0 +1,7 @@
+// 02_encryption_start_time.kql
+// Goal: Identify the earliest time a ".want_to_cry" file was observed
+
+DeviceFileEvents
+| where DeviceName == "vm-final-lab-wo"
+| where FileName endswith ".want_to_cry"
+| summarize EncryptionStart=min(TimeGenerated), TotalEvents=count(), UniqueFiles=dcount(FolderPath)

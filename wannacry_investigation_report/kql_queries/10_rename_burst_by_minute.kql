@@ -1,0 +1,8 @@
+// 10_rename_burst_by_minute.kql
+// Goal: Look for rename/write bursts per minute for want_to_cry artifacts
+
+DeviceFileEvents
+| where DeviceName == "vm-final-lab-wo"
+| where FileName contains "want_to_cry" or FolderPath contains "want_to_cry"
+| summarize Events=count(), UniqueFiles=dcount(FolderPath) by bin(TimeGenerated, 1m), ActionType
+| sort by TimeGenerated asc

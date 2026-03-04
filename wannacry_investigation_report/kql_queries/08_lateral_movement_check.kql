@@ -1,0 +1,15 @@
+// 08_lateral_movement_check.kql
+// Goal: Validate whether activity spread beyond the host or indicates remote execution/auth anomalies
+// Part A: Search other hosts for want_to_cry artifacts (should be none if single-host)
+
+union isfuzzy=true
+(
+    DeviceFileEvents
+    | where FileName contains "want_to_cry" or FolderPath contains "want_to_cry"
+    | summarize Events=count(), FirstSeen=min(TimeGenerated), LastSeen=max(TimeGenerated) by DeviceName
+),
+(
+    SecurityEvent
+    | where EventID in (4624, 4625, 4648) // logons + explicit creds
+    | summarize Events=count(), FirstSeen=min(TimeGenerated), LastSeen=max(TimeGenerated) by Computer
+)

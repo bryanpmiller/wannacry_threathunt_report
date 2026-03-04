@@ -1,0 +1,9 @@
+// 01_find_want_to_cry_files.kql
+// Goal: Find all file events related to artifacts containing "want_to_cry"
+// Scope: single host
+
+DeviceFileEvents
+| where DeviceName == "vm-final-lab-wo"
+| where FileName contains "want_to_cry" or FolderPath contains "want_to_cry"
+| project TimeGenerated, DeviceName, ActionType, FileName, FolderPath, SHA256, InitiatingProcessAccountName, InitiatingProcessFileName, InitiatingProcessCommandLine
+| sort by TimeGenerated asc

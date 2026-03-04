@@ -1,0 +1,7 @@
+// 05_registry_modifications.kql
+// Goal: Broad registry modification review (filter further during pivots)
+
+DeviceRegistryEvents
+| where DeviceName == "vm-final-lab-wo"
+| project TimeGenerated, ActionType, RegistryKey, RegistryValueName, RegistryValueData, InitiatingProcessFileName, InitiatingProcessCommandLine, InitiatingProcessAccountName
+| sort by TimeGenerated asc

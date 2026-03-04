@@ -1,0 +1,9 @@
+// 04_powershell_activity.kql
+// Goal: Review PowerShell activity around suspected impact window
+// Tip: set the Log Analytics time picker to cover the suspected window.
+
+DeviceProcessEvents
+| where DeviceName == "vm-final-lab-wo"
+| where FileName =~ "powershell.exe" or ProcessCommandLine has "powershell"
+| project TimeGenerated, DeviceName, AccountName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessCommandLine
+| sort by TimeGenerated asc

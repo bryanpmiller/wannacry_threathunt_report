@@ -1,0 +1,8 @@
+// 03_file_activity_by_process.kql
+// Goal: Correlate want_to_cry-related file activity to initiating processes
+
+DeviceFileEvents
+| where DeviceName == "vm-final-lab-wo"
+| where FileName contains "want_to_cry" or FolderPath contains "want_to_cry"
+| summarize Events=count(), UniqueFiles=dcount(FolderPath) by InitiatingProcessFileName, InitiatingProcessAccountName
+| sort by Events desc

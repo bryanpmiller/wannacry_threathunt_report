@@ -55,26 +55,26 @@ flowchart LR
     A --> B --> C --> D --> E --> F --> G
 ```
 
-For evidence-driven timing details, see [Investigation Timeline Report](report/investigation_timeline.md).
+For evidence-driven timing details, see [Investigation Timeline Report](assets/report/investigation_timeline.md).
 
 ## Investigation Walkthrough
 
 Follow the walkthrough in order:
 
-1. [Initial Triage](walkthrough/01_initial_triage.md)
-2. [Identify Encryption vs Simulation](walkthrough/02_identifying_encryption_activity.md)
-3. [Process Investigation](walkthrough/03_process_investigation.md)
-4. [Registry Analysis](walkthrough/04_registry_analysis.md)
-5. [Network Activity](walkthrough/05_network_activity.md)
-6. [Conclusion and Confidence](walkthrough/06_conclusion.md)
+1. [Initial Triage](assets/walkthrough/01_initial_triage.md)
+2. [Identify Encryption vs Simulation](assets/walkthrough/02_identifying_encryption_activity.md)
+3. [Process Investigation](assets/walkthrough/03_process_investigation.md)
+4. [Registry Analysis](assets/walkthrough/04_registry_analysis.md)
+5. [Network Activity](assets/walkthrough/05_network_activity.md)
+6. [Conclusion and Confidence](assets/walkthrough/06_conclusion.md)
 
 Core KQL sequence:
 
-1. [Find Wannacry Files](kql_queries/01_find_want_to_cry_files.kql)
-2. [Identify Encryption Start Time](kql_queries/02_encryption_start_time.kql)
-3. [Correlate File Activity by Process](kql_queries/03_file_activity_by_process.kql)
-4. [Check Defender Exclusions Paths](kql_queries/06_defender_exclusions_paths.kql)
-5. [Check Lateral Movement](kql_queries/08_lateral_movement_check.kql)
+1. [Find Wannacry Files](assets/kql_queries/01_find_want_to_cry_files.kql)
+2. [Identify Encryption Start Time](assets/kql_queries/02_encryption_start_time.kql)
+3. [Correlate File Activity by Process](assets/kql_queries/03_file_activity_by_process.kql)
+4. [Check Defender Exclusions Paths](assets/kql_queries/06_defender_exclusions_paths.kql)
+5. [Check Lateral Movement](assets/kql_queries/08_lateral_movement_check.kql)
 
 ## Key Investigation Takeaways
 
@@ -86,20 +86,20 @@ Core KQL sequence:
 
 ## MITRE ATT&CK Mapping
 
-See [MITRE ATT&CK Mapping](mitre_mapping/mitre_attack_mapping.md) for educational mappings tied to investigation evidence.
+See [MITRE ATT&CK Mapping](assets/mitre_mapping/mitre_attack_mapping.md) for educational mappings tied to investigation evidence.
 
 ## Reproducing the Investigation
 
 1. Open Azure Log Analytics Workspace and go to **Logs**.
-2. Run [1 Find Wannacry Files](kql_queries/01_find_want_to_cry_files.kql).
+2. Run [1 Find Wannacry Files](assets/kql_queries/01_find_want_to_cry_files.kql).
    Checkpoint: Confirm `want_to_cry` artifacts exist and scope host is `vm-final-lab-wo`.
-3. Run [2 Identify Encryption Start Time](kql_queries/02_encryption_start_time.kql).
+3. Run [2 Identify Encryption Start Time](assets/kql_queries/02_encryption_start_time.kql).
    Checkpoint: Identify earliest impact signal and candidate impact window.
-4. Run [3 Correlate File Activity by Process](kql_queries/03_file_activity_by_process.kql).
+4. Run [3 Correlate File Activity by Process](assets/kql_queries/03_file_activity_by_process.kql).
    Checkpoint: Correlate file activity to responsible process context.
-5. Run [6 Check Defender Exclusions Paths](kql_queries/06_defender_exclusions_paths.kql).
+5. Run [6 Check Defender Exclusions Paths](assets/kql_queries/06_defender_exclusions_paths.kql).
    Checkpoint: Determine whether Defender exclusions indicate likely defense evasion.
-6. Run [8 Check Lateral Movement](kql_queries/08_lateral_movement_check.kql).
+6. Run [8 Check Lateral Movement](assets/kql_queries/08_lateral_movement_check.kql).
    Checkpoint: Validate whether spread occurred beyond the single host.
 7. Build your final timeline and findings using `TimeGenerated` as the canonical timestamp field.
 
@@ -107,21 +107,22 @@ See [MITRE ATT&CK Mapping](mitre_mapping/mitre_attack_mapping.md) for educationa
 
 Investigation screenshot slots are defined below. Current status: **pending capture**.
 
-- `images/kql_query_results_1_find_want_to_cry.png`
-- `images/kql_query_results_2_process_investigation.png`
-- `images/kql_query_results_3_registry_exclusions.png`
-- `images/kql_query_results_4_network_validation.png`
+- `assets/images/kql_query_results_1_find_want_to_cry.png`
+- `assets/images/kql_query_results_2_process_investigation.png`
+- `assets/images/kql_query_results_3_registry_exclusions.png`
+- `assets/images/kql_query_results_4_network_validation.png`
 
-Capture guidance is documented in [Screenshot Capture Guide](images/README.md).
+Capture guidance is documented in [Screenshot Capture Guide](assets/images/README.md).
 
 ## Repository Map
 
-- `report/` - incident-style write-up (summary, timeline, findings, recommendations)
-- `walkthrough/` - guided investigation workflow (triage to conclusion)
-- `kql_queries/` - ready-to-run hunting and validation queries
-- `mitre_mapping/` - MITRE ATT&CK educational mapping
-- `artifacts/` - artifact list focused on `want_to_cry` strings
-- `images/` - screenshot naming contract and capture guidance
+- `assets/report/` - incident-style write-up (summary, timeline, findings, recommendations)
+- `assets/walkthrough/` - guided investigation workflow (triage to conclusion)
+- `assets/kql_queries/` - ready-to-run hunting and validation queries
+- `assets/mitre_mapping/` - MITRE ATT&CK educational mapping
+- `assets/artifacts/` - artifact list focused on `want_to_cry` strings
+- `assets/images/` - screenshot naming contract and capture guidance
+
 
 
 

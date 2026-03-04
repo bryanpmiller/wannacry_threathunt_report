@@ -36,6 +36,8 @@ This investigation demonstrates how analysts can apply MITRE ATT&CK mapping duri
 
 The following diagram illustrates the **investigation workflow and related MITRE techniques** identified during the ransomware-like activity.
 
+![SOC Investigation Flow](../images/mitre_attack_flow.png)
+
 ```
 Initial Activity Detected
         │

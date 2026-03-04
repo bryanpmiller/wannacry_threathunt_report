@@ -103,6 +103,8 @@ See [MITRE ATT&CK Mapping](assets/mitre_mapping/mitre_attack_mapping.md) for edu
    Checkpoint: Validate whether spread occurred beyond the single host.
 7. Build your final timeline and findings using `TimeGenerated` as the canonical timestamp field.
 
+
+<!--
 ## Query Output Examples
 
 Investigation screenshot slots are defined below. Current status: **pending capture**.
@@ -113,7 +115,7 @@ Investigation screenshot slots are defined below. Current status: **pending capt
 - `assets/images/kql_query_results_4_network_validation.png`
 
 Capture guidance is documented in [Screenshot Capture Guide](assets/images/README.md).
-
+-->
 ## Repository Map
 
 - `assets/report/` - incident-style write-up (summary, timeline, findings, recommendations)

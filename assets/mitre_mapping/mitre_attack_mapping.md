@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # MITRE ATT&CK Mapping (Educational)
 
 > This mapping is derived from the **KQL queries used in the investigation** and reflects attacker techniques that were investigated during the ransomware-like activity.
@@ -76,20 +74,3 @@ Final Determination
 Simulated Ransomware Activity
 (No Lateral Movement Observed)
 ```
-
----
-
-=======
-# MITRE ATT&CK Mapping (Educational)
-
-> This is a learning-oriented mapping of observed investigation themes.  
-> Confirm techniques based on actual evidence in your environment.
-
-| Tactic | Technique | Why it may apply | Evidence to cite |
-|---|---|---|---|
-| Impact | T1486 Data Encrypted for Impact | File rename/encryption-like activity | DeviceFileEvents rename/write bursts |
-| Execution | T1059.001 PowerShell | PowerShell-based activity | DeviceProcessEvents (powershell.exe) |
-| Defense Evasion | T1562.001 Impair Defenses | Defender exclusions/tampering | DeviceRegistryEvents under Defender keys |
-| Discovery | T1083 File and Directory Discovery | Scripts enumerating files before rename | Process command line / script content |
-| Lateral Movement | (various) | Checked and not proven | SecurityEvent + process/network pivots |
->>>>>>> 1df114c79c3aafb7dd68fc8298645fa88fc314e5

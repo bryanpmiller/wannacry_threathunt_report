@@ -16,6 +16,10 @@ This repository combines a SOC-style incident report with a step-by-step threat 
 - MITRE ATT&CK behavior mapping
 - Incident response documentation and evidence packaging
 
+---
+## SOC Investigation Flow
+![SOC Investigation Flow](assets/images/mitre_attack_flow.png)
+
 ## Investigation Architecture
 
 ```mermaid

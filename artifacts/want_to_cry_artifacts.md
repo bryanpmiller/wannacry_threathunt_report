@@ -9,6 +9,8 @@ This repository focuses on artifacts that contain the string `want_to_cry`.
 
 ## How to list artifacts
 Run:
-- `kql_queries/01_find_want_to_cry_files.kql`
+- [1 Find Wannacry Files](../kql_queries/01_find_want_to_cry_files.kql)
 
 Then export results to CSV for your evidence pack (redact as needed).
+
+

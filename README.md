@@ -20,6 +20,20 @@ This repository combines a SOC-style incident report with a step-by-step threat 
 ## SOC Investigation Flow
 ![SOC Investigation Flow](assets/images/mitre_attack_flow.png)
 
+## Investigation Timeline
+
+```mermaid
+flowchart LR
+    A[Initial artifact detection<br/>want_to_cry indicators on vm-final-lab-wo]
+    B[Impact window identification<br/>rename and write burst analysis]
+    C[Process lineage pivot<br/>parent and child process validation]
+    D[Registry tampering check<br/>Defender exclusions review]
+    E[Network activity validation<br/>outbound connection review]
+    F[Lateral movement check<br/>cross-host spread validation]
+    G[Final assessment<br/>controlled simulation-like activity]
+    A --> B --> C --> D --> E --> F --> G
+```
+
 ## Investigation Architecture
 
 ```mermaid
@@ -43,20 +57,6 @@ flowchart TD
     E2 --> F
     E3 --> F
     E4 --> F
-```
-
-## Investigation Timeline
-
-```mermaid
-flowchart LR
-    A[Initial artifact detection<br/>want_to_cry indicators on vm-final-lab-wo]
-    B[Impact window identification<br/>rename and write burst analysis]
-    C[Process lineage pivot<br/>parent and child process validation]
-    D[Registry tampering check<br/>Defender exclusions review]
-    E[Network activity validation<br/>outbound connection review]
-    F[Lateral movement check<br/>cross-host spread validation]
-    G[Final assessment<br/>controlled simulation-like activity]
-    A --> B --> C --> D --> E --> F --> G
 ```
 
 For evidence-driven timing details, see [Investigation Timeline Report](assets/report/investigation_timeline.md).

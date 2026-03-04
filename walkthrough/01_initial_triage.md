@@ -1,4 +1,4 @@
-# 01 — Initial Triage
+# 01 - Initial Triage
 
 Goal: confirm scope and determine whether this is likely impact activity.
 

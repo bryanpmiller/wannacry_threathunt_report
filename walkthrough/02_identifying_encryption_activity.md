@@ -1,6 +1,6 @@
-# 02 — Identifying Encryption vs Simulation
+# 02 - Identifying Encryption vs Simulation
 
-Ransomware investigations often start with an “encryption signal.”  
+Ransomware investigations often start with an "encryption signal."  
 But many labs simulate encryption by renaming files rather than actually encrypting.
 
 ## What to look for

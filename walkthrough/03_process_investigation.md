@@ -1,4 +1,4 @@
-# 03 — Process Investigation
+# 03 - Process Investigation
 
 Goal: tie file activity to a process and parent process chain.
 

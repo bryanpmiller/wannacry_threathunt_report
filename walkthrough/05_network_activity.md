@@ -1,4 +1,4 @@
-# 05 — Network Activity
+# 05 - Network Activity
 
 Goal: determine whether the host made suspicious outbound connections during the impact window.
 

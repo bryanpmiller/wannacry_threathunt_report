@@ -8,8 +8,10 @@ Goal: detect defense evasion patterns (especially Windows Defender exclusions).
 - Sudden broad exclusions (for example, entire drive roots)
 
 ## Queries
-- `kql_queries/06_defender_exclusions_paths.kql`
-- `kql_queries/05_registry_modifications.kql`
+- [6 Check Defender Exclusions Paths](../kql_queries/06_defender_exclusions_paths.kql)
+- [5 Analyze Registry Modifications](../kql_queries/05_registry_modifications.kql)
 
 ## Interpretation guidance
 One-off changes might be IT activity; correlate to time window plus process/user context.
+
+

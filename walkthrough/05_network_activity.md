@@ -8,4 +8,6 @@ Goal: determine whether the host made suspicious outbound connections during the
 - DNS lookups that correlate to suspicious IPs (if logs available)
 
 ## Queries
-- `kql_queries/07_network_connections.kql`
+- [7 Validate Network Connections](../kql_queries/07_network_connections.kql)
+
+

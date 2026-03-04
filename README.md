@@ -17,7 +17,9 @@ This repository combines a SOC-style incident report with a step-by-step threat 
 - Incident response documentation and evidence packaging
 
 ---
+
 ## SOC Investigation Flow
+
 ![SOC Investigation Flow](assets/images/mitre_attack_flow.png)
 
 ## Investigation Timeline
